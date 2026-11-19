@@ -1,0 +1,48 @@
+{# SPDX-License-Identifier: AGPL-3.0-only #}
+{#
+    The area sidebar. Every area is rendered: on a wide screen only the one that holds the page is
+    shown (data-shown), with its title, caption and sections; in the phone drawer every area is a row
+    and only that one is open. A page in no area shows the first one. Group headings appear only
+    when an area has more than one group.
+    Variables: areas (nav_areas()).
+#}
+{% set focus = constant('Foresi\\Ui\\Component\\Style::FOCUS') %}
+{% set shown = areas|filter(a => a.current)|first ?: areas|first %}
+{% set shownId = shown ? shown.area.id : null %}
+
+{% macro item(entry, focus) %}
+    <a href="{{ path(entry.route) }}" data-nav-sync{% if entry.current %} aria-current="page"{% endif %} class="group flex h-control items-center gap-2.5 rounded-control px-2.5 text-text no-underline hover:bg-frame-hover aria-[current=page]:bg-white aria-[current=page]:font-medium aria-[current=page]:text-ink aria-[current=page]:shadow-raised {{ focus }}">
+        {{ ux_icon('lucide:' ~ entry.icon, {class: 'size-4 shrink-0 text-muted group-aria-[current=page]:text-green', 'aria-hidden': 'true'}) }}
+        <span class="truncate">{{ entry.labelKey|trans }}</span>
+        {% if entry.count is not null %}<span data-nav-count data-nav-sync class="num ml-auto text-caption text-muted group-aria-[current=page]:font-medium group-aria-[current=page]:text-green">{{ entry.countText }}</span>{% endif %}
+    </a>
+{% endmacro %}
+
+<nav aria-label="{{ 'shell.sidebar_label'|trans }}">
+    {% for entry in areas %}
+        {% set area = entry.area %}
+        {% set first = (entry.groups|first).items|first %}
+        {% set many = entry.groups|length > 1 %}
+        <section data-nav-area="{{ area.id }}" data-nav-sync{% if area.id == shownId %} data-shown{% endif %} aria-labelledby="nav-area-{{ area.id }}">
+            {# Phone: a row that opens the area at its first section. #}
+            <a href="{{ path(first.route) }}" data-nav-sync{% if entry.current %} aria-current="true"{% endif %} class="group flex h-control-lg items-center gap-2.5 rounded-control px-2.5 font-medium text-ink no-underline hover:bg-frame-hover shell:hidden {{ focus }}">
+                {{ ux_icon('lucide:' ~ area.icon, {class: 'size-5 shrink-0 text-muted group-aria-[current=true]:text-green', 'aria-hidden': 'true'}) }}
+                <span class="truncate">{{ area.labelKey|trans }}</span>
+            </a>
+            <div class="px-2.5 pb-3 pt-1 max-shell:hidden">
+                <h2 id="nav-area-{{ area.id }}" class="m-0 text-title font-semibold text-ink">{{ area.labelKey|trans }}</h2>
+                <p class="m-0 mt-0.5 text-caption text-muted">{{ area.captionKey|trans }}</p>
+            </div>
+            <div data-nav-sections class="max-shell:mb-2 max-shell:ml-4">
+                {% for group in entry.groups %}
+                    <section data-nav-group="{{ group.key }}"{% if many %} aria-labelledby="nav-group-{{ area.id }}-{{ group.key }}"{% endif %}>
+                        {% if many %}<h3 id="nav-group-{{ area.id }}-{{ group.key }}" class="mx-2.5 mb-1 mt-3.5 text-caption font-semibold uppercase tracking-wide text-muted">{{ group.labelKey|trans }}</h3>{% endif %}
+                        <ul class="m-0 grid list-none gap-0.5 p-0">
+                            {% for item in group.items %}<li>{{ _self.item(item, focus) }}</li>{% endfor %}
+                        </ul>
+                    </section>
+                {% endfor %}
+            </div>
+        </section>
+    {% endfor %}
+</nav>
