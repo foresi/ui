@@ -1,0 +1,604 @@
+# SPDX-License-Identifier: AGPL-3.0-only
+form:
+  # Starts the page title while a form shows errors.
+  title_error: 'Error:'
+dashboard:
+  title: Dashboard
+  empty:
+    title: Your dashboard is on its way
+    text: Once there is data in this organisation, the overview will appear here.
+  invoicing:
+    title: Invoicing
+    note: Amounts in CZK, months by the tax point.
+    invoiced: 'Invoiced – {month}'
+    base: 'Base {amount}'
+    unpaid: Unpaid
+    overdue: Overdue
+    documents: '{count, plural, one {# document} other {# documents}}'
+    vat: 'Output VAT – {month}'
+    age_30: Overdue up to 30 days
+    age_60: Overdue 31–60 days
+    age_over: Overdue over 60 days
+    debtors: Top debtors
+    debtors_empty: No customer owes anything.
+    pending: '{month} has not gone to the accountant yet ({count, plural, one {# document} other {# documents}})'
+    pending_link: Pass to the accountant
+registry:
+  result:
+    valid: Valid in VIES
+    invalid: Not valid in VIES
+    reliable: Reliable VAT payer
+    unreliable: Unreliable VAT payer
+    not_registered: Not a registered VAT payer
+    unavailable: Register unavailable
+nav:
+  area:
+    overview: Overview
+    sales: Sales
+    purchasing: Purchasing
+    money: Money
+    contacts: Contacts
+    projects: Projects
+    settings: Settings
+  area_caption:
+    overview: Running the firm
+    sales: From offer to payment
+    purchasing: From order to payment
+    money: Bank and cash
+    contacts: Customers and suppliers
+    projects: Delivering the work
+    settings: The firm, people and connections
+  group:
+    main: Main
+    sales: Sales
+    money: Money
+    contacts: Contacts
+    work: Work
+    extensions: Extensions
+    settings: Settings
+  item:
+    people: People
+    api: API and MCP
+    connected_apps: Connected apps
+    webhooks: Webhooks
+    dashboard: Dashboard
+    shared_with_me: Shared with me
+    contacts: Address book
+    invoices: Invoices
+    advances: Advance invoices
+    tax_documents: Tax documents
+    corrections: Corrective documents
+    firm: Firm
+    import: Import and export
+    sent_mail: Sent e-mails
+    recurring: Recurring invoices
+    bank: Bank
+    purchasing: Costs
+    projects: Projects
+    labels: Labels
+    my_tasks: My tasks
+    time: Time
+    notifications: Notifications
+ui:
+  code_block:
+    copy: Copy
+    copied: Copied
+    copy_failed: "Copying failed; the text is selected, press Ctrl+C."
+  inline_field:
+    edit: 'Edit {label}'
+    save: Save
+    cancel: Cancel
+  avatar:
+    nobody: Nobody
+  person_picker:
+    change: "Change {label}: {name}"
+  dialog:
+    close: Close
+    discard_question: Discard unsaved changes?
+    keep_editing: Keep editing
+    discard: Discard
+    failed: Something went wrong. Please try again.
+  column_picker:
+    button: Columns
+    modified: changed
+    title: Columns
+    description: Choose which columns the list shows, their order and the row height.
+    columns: Columns shown
+    search: Search columns
+    no_match: No column matches.
+    locked: Always shown
+    move_up: 'Move {label} up'
+    move_down: 'Move {label} down'
+    moved: '{label} moved to position {position} of {total}.'
+    density: Row height
+    density_comfortable: Comfortable
+    density_comfortable_hint: 56 px
+    density_dense: Compact
+    density_dense_hint: 44 px
+    reset: Reset to default
+    apply: Apply
+    add: Add column
+  attribute:
+    yes: 'Yes'
+    no: 'No'
+  tabs:
+    modified: unsaved changes
+  filter_bar:
+    title: Filters
+    description: Choose what narrows the list.
+    search: Search
+    more: More filters
+    filters: Filters
+    apply: Apply
+    clear_all: Clear all
+    clear_one: 'Clear the filter {label}'
+  view_filter:
+    add: Filter
+    add_row: Add filter
+    condition: Condition
+    value: Value
+    to: To
+    days: Number of days
+    month: Month
+    none: '— not used —'
+    no_match: Nothing matches.
+    remove: 'Remove filter {label}'
+    'yes': 'Yes'
+    'no': 'No'
+    unknown: Unknown
+    chip: '{field}: {condition}'
+    range: '{from} – {to}'
+    related: '{relation}: {field}'
+    name: Name
+    op_label:
+      is: is
+      is_not: is not
+      is_empty: is empty
+      is_not_empty: is not empty
+      eq: '='
+      ne: '≠'
+      lt: '<'
+      le: '≤'
+      gt: '>'
+      ge: '≥'
+      between: between
+      before: before
+      after: after
+      on_or_before: on or before
+      on_or_after: on or after
+      contains: contains
+      does_not_contain: does not contain
+      is_any_of: is any of
+      is_none_of: is none of
+      has_any_of: has any of
+      has_all_of: has all of
+      has_none_of: has none of
+      relation:
+        is_not_empty: has at least one
+        is_empty: has none
+    op:
+      is: '{value}'
+      is_not: 'not {value}'
+      is_any_of: '{value}'
+      is_none_of: 'none of {value}'
+      is_empty: empty
+      is_not_empty: not empty
+      eq: '= {value}'
+      ne: '≠ {value}'
+      lt: '< {value}'
+      le: '≤ {value}'
+      gt: '> {value}'
+      ge: '≥ {value}'
+      between: '{value}'
+      before: 'before {value}'
+      after: 'after {value}'
+      on_or_before: 'on or before {value}'
+      on_or_after: 'on or after {value}'
+      contains: 'contains {value}'
+      does_not_contain: 'does not contain {value}'
+      has_any_of: 'has any of {value}'
+      has_all_of: 'has all of {value}'
+      has_none_of: 'has none of {value}'
+    rule:
+      day: Exact date
+      month: Month
+      last_n_days: Last N days
+      next_n_days: Next N days
+      n_days_ago: N days ago
+      n_days_from_now: In N days
+    relative:
+      today: today
+      yesterday: yesterday
+      tomorrow: tomorrow
+      this_week: this week
+      last_week: last week
+      this_month: this month
+      last_month: last month
+      next_month: next month
+      this_quarter: this quarter
+      last_quarter: last quarter
+      this_year: this year
+      last_year: last year
+      last_n_days: '{n, plural, one {the last day} other {the last # days}}'
+      next_n_days: '{n, plural, one {the next day} other {the next # days}}'
+      n_days_ago: '{n, plural, one {# day ago} other {# days ago}}'
+      n_days_from_now: '{n, plural, one {in # day} other {in # days}}'
+  sheet:
+    resize: Resize the panel
+    full_screen: Full screen
+    open_as_page: Open as page
+  confirm:
+    accept: Confirm
+    cancel: Cancel
+  combobox:
+    found: 'Found: {count}'
+  markdown_editor:
+    write: Write
+    preview: Preview
+    nothing_to_preview: Nothing to preview
+    toolbar: Formatting
+    bold: Bold
+    italic: Italic
+    list: List
+    link: Link
+    code: Code
+    quote: Quote
+    mentions: People
+    no_match: No one matches
+  mapping_row:
+    # Next to a select whose proposed choice is a guess the user should check.
+    review: Check this
+  empty_state:
+    title: Nothing here yet
+  # A value that is not filled in, in a list cell or on a detail page.
+  empty_value: Not set
+  table:
+    caption: Table
+    select_all: Select all rows
+    select_row: 'Select row {label}'
+    actions: Actions
+    more_actions: 'More actions for {label}'
+    total: Total
+    unread: Unread
+  bulk:
+    label: Bulk actions
+    selected:
+      one: "'{'count'}' record selected"
+      few: "'{'count'}' records selected"
+      other: "'{'count'}' records selected"
+  pagination:
+    label: Pagination
+    previous: Previous page
+    next: Next page
+    page: 'Page {page}'
+  stepper:
+    done: done
+  page_header:
+    more_actions: More actions
+  breadcrumb:
+    label: Breadcrumb
+  palette:
+    search: Search
+    open: Search or run a command
+    label: Command palette
+    placeholder: Type a command or search
+    close: Close
+    empty: Nothing found
+shell:
+  skip_to_content: Skip to content
+  sidebar_label: Main navigation
+  rail_label: Areas
+  unread_notifications: Unread notifications
+  menu:
+    open: Open menu
+    close: Close menu
+  palette:
+    go_to: Go to
+  organisation:
+    none: No organisation
+    switch: Switch organisation
+  user_menu:
+    label: Account menu
+    profile: My profile
+    notifications: Notification settings
+    language: 'Switch language to {language}'
+    soon: Soon
+  worker:
+    down: 'The background worker is not running. Mail, recurring invoices and bank mail wait until it runs again.'
+    link: Show the status
+role:
+  guest: Guest
+  owner: Owner
+  member: Team member
+  subcontractor: Subcontractor
+  client: Client
+locale:
+  cs: Čeština
+  en: English
+catalogue:
+  title: Component catalogue
+  intro: Every component in every state, with synthetic data. Development tool, not part of production.
+  language: Language
+  jump: Components
+  mobile_preview: 390 px preview
+  interaction_note: Hover and focus are shown by interacting with the live component; the focus ring is always visible on the keyboard.
+  state:
+    modified: Changed, not saved
+    filtered: Filtered
+    dense: Dense rows and footer
+    live: Live
+    default: Default
+    variants: Variants
+    sizes: Sizes
+    pressed: Pressed
+    disabled: Disabled
+    error: Error
+    required: Required
+    empty: Empty
+    loading: Loading
+    titled: Titled
+    action: With an action
+    long: Long text
+    selectable: Selectable with bulk bar
+    sorted: Sorted with totals
+    progress: In progress
+    done: Done
+    value_map: Value mapping
+    linked: Linked
+    status: With status text
+    radius: Radius
+    height: Heights
+    type: Type
+    border: Borders
+    elevation: Elevation
+    unsaved: Unsaved changes
+    confirm: Confirmation
+    open: Open
+    widths: Widths and rows
+    closed: Closed
+    end: Bottom right
+
+format:
+  date: 'Y-m-d'
+  datetime: 'Y-m-d H:i'
+firm:
+  title: Firm
+  new: Set up the firm
+  sections: Firm sections
+  tab:
+    details: Details
+    invoicing: Invoicing
+    mail: E-mail
+    bank: Bank
+  card:
+    tax: VAT
+    seat: Registered office
+    documents: On documents
+    images: Logo and stamp
+  field:
+    name: Name
+    vatStatus: VAT status
+    registerEntry: Register entry
+    registerEntry_help: A company its file number, a sole trader its trade register
+    logo: Logo
+    logo_help: 'PNG or JPEG, up to 1 MB'
+    logo_stored_help: 'Uploaded. A new PNG or JPEG replaces it, up to 1 MB'
+    removeLogo: Remove the logo
+    stamp: Stamp and signature
+    stamp_help: 'One PNG or JPEG, up to 1 MB. Used only in documents'
+    stamp_stored_help: 'Uploaded. A new PNG or JPEG replaces it, up to 1 MB'
+    removeStamp: Remove the stamp and signature
+  vat_status:
+    registered: VAT payer
+    not_registered: Non-payer
+    identified_person: Identified person
+  flash:
+    created: The firm is saved.
+    updated: The changes are saved.
+  error:
+    vat_status: Choose the VAT status.
+    vat_id_required: Enter the VAT ID of this firm.
+    save_failed: The firm could not be saved. Check the details and try again.
+    one_per_instance: Foresi keeps one firm per instance. Another firm needs an instance of its own.
+    image_type: Upload a PNG or JPEG image.
+    image_size: The image must be 1 MB or smaller.
+    image_dimensions: The image can be at most 3000 x 3000 pixels.
+    image_color: Upload the JPEG in RGB, not in CMYK.
+    image_upload: The image could not be uploaded. Try it again.
+  mail:
+    title: E-mail
+    sections: E-mail settings sections
+    tab:
+      templates: Templates
+      server: Mail server
+    card:
+      templates: E-mail templates
+      invoice: Invoice
+      server: Outgoing mail server (SMTP)
+      test: Test e-mail
+    templates_help: The text is sent in the language of the document.
+    templates_list_help: Open a template to edit it for each document language.
+    languages: Template languages
+    custom: own text
+    built_in: built-in text
+    built_in_now: Built-in text
+    language_invalid: has a problem
+    sample:
+      customer: Sample Customer Ltd
+    language:
+      cs: Czech
+      en: English
+    reset: Restore the built-in text
+    reset_confirm: 'Restore the built-in text for {language}?'
+    reset_confirm_text: Your own text is deleted.
+    reset_confirm_accept: Restore built-in text
+    reset_confirm_cancel: Keep own text
+    inserted: 'Inserted: {name}'
+    variables: Variables
+    variables_help: Click or drag to insert into the text.
+    variable:
+      number: Document number
+      order_number: Order number
+      variable_symbol: Variable symbol
+      description: Description
+      issue_date: Issue date
+      due_date: Due date
+      currency: Currency
+      document_type: Document type
+      customer_name: Customer name
+      amount_vat: VAT amount
+      amount_total: Amount to pay
+      amount_net: Amount without VAT
+      firm_name: Firm name
+      iban: IBAN
+      firm_email: Firm e-mail
+      firm_phone: Firm phone
+      registration_number: Reg. No.
+      vat_id: VAT ID
+      sender_name: Sender name
+      link: Link to the document
+    field:
+      subject: Subject
+      body: Message
+      body_help: 'Text is Markdown. Without {token} the link goes at the end.'
+      host: Host
+      host_help: For example smtp.example.com
+      port: Port
+      encryption: Encryption
+      username: Username
+      password: Password
+      password_kept: Leave blank to keep the stored password, unless you change the server, port, encryption or user name.
+      fromAddress: Sender e-mail
+      fromAddress_help: Undelivered mail comes back here too.
+      fromName: Sender name
+      fromName_help: Recipients see it beside the message.
+    encryption:
+      starttls: STARTTLS (usually port 587)
+      tls: TLS (usually port 465)
+    test:
+      intro: 'Sends a message to {email} through the saved server.'
+      button: Send a test e-mail
+      verified: 'Verified on {date}.'
+      date_format: 'j M Y \a\t H:i'
+      unverified: These settings are not verified yet.
+      last_failed: 'Last test on {date} failed: {reason}'
+      save_first: A test e-mail can be sent once the server is saved.
+      subject: 'Test e-mail: {firm}'
+      body: 'This message checks that the server {host}:{port} sends the mail of the firm. No reply is needed.'
+    flash:
+      template_saved: 'The “{name}” template is saved.'
+      reminders_saved: The reminder settings are saved.
+      saved: The e-mail templates are saved.
+      reset: The template has its built-in text again.
+      server_saved: The mail server is saved.
+      test_sent: 'The test e-mail went to {email}.'
+      test_refused: 'The test e-mail did not go out: {reason}'
+      test_limited: Too many test e-mails. Try again in a minute.
+      test_unavailable: Save the mail server first.
+    error:
+      unknown_variables: 'Unknown variable: {names}. Insert one from the list below the text.'
+      link_in_subject: 'The link {link} belongs in the message, not in the subject.'
+      no_key: This installation has no key to seal passwords. The administrator sets MAIL_SECRET_KEYS.
+      host: Enter a host name or an IP address, without a port.
+      host_refused: This server cannot be reached from here. Enter a public server.
+      host_unresolved: No server of this name was found. Check the name.
+      unknown_token: The text holds an unknown variable. Insert one from the list below the text.
+      port: 'The port must be one of: {ports}.'
+      encryption: Choose the encryption.
+      line_break: The value cannot hold a line break.
+      password_again: The server, port, encryption or user name changed. Enter the password again.
+      save_failed: Saving failed. Try it again.
+  invoicing:
+    title: Invoicing
+    card:
+      defaults: Invoice defaults
+      texts: Texts on invoices
+      contact: Contact on invoices
+    field:
+      rounding: Rounding of the total
+      rounding_help: Shown as a separate row of the invoice
+      constantSymbol: Constant symbol
+      constantSymbol_help: 'Up to 10 digits, prefilled on new invoices'
+      textBefore: Text above the items
+      textBefore_help: 'Printed above the items, for example a greeting'
+      textAfter: Text below the items
+      textAfter_help: 'Printed below the items, for example payment terms'
+      contactEmail: E-mail
+      contactPhone: Phone
+      contactWeb: Website
+    rounding:
+      whole_unit: To whole crowns
+      none: No rounding
+    flash:
+      saved: The invoicing settings are saved.
+    error:
+      rounding: Choose how the total is rounded.
+      constant_symbol: Enter up to 10 digits.
+      email: Enter a valid e-mail address.
+      save_failed: The settings could not be saved. Try it again.
+# The footer of mail the installation sends itself, such as invitations.
+system_mail:
+  footer: 'Sent by {product}'
+  footer_organisation: 'Sent by {product} on behalf of {organisation}'
+saved_view:
+  save: Save
+  more_views: More views
+  save_as: Save as new view
+  save_as_submit: Save view
+  save_as_description: The list's filters, sort and columns become a view of their own.
+  reset: Reset
+  cancel: Cancel
+  manage: Manage views
+  manage_description: Drag the views into the order you want, then save it. To change a view's filters or columns, open it from its ⋯ menu, change it on the list and press Save.
+  manage_description_member: Owners set the order and the tabs. To change a view's filters or columns, open it from its ⋯ menu, change it on the list and press Save.
+  save_order: Save order
+  ordered: The order of the views is saved.
+  hidden: The view is hidden. Show it again in Manage views.
+  shown: The view shows again.
+  all_fixed: always the first tab
+  read_only: only its creator or an owner changes it
+  row_actions: 'Actions for {name}'
+  open_edit: Open and edit
+  open: Open
+  rename: Rename…
+  rename_title: Rename view
+  rename_submit: Rename
+  share: Share with everyone
+  make_private: Keep to myself
+  to_more: Move to More views
+  to_tabs: Move to the tabs
+  hide: Hide
+  show: Show
+  show_named: 'Show {name}'
+  move_up: 'Move {name} up'
+  move_down: 'Move {name} down'
+  moved: 'The view {label} is now in {place}.'
+  tab_count: '{count} of {max}'
+  section:
+    tabs: Tabs
+    more: More views
+    hidden: Hidden
+  restore: Restore default views
+  restore_confirm: Restore the default views?
+  restore_confirm_text: The views the list comes with get back their names, filters and places. Views people made stay as they are.
+  delete: Delete
+  delete_confirm: 'Delete the view "{name}"?'
+  delete_confirm_text: Everyone it is shared with loses it too.
+  saved: The view is saved.
+  created: The new view is saved.
+  updated: The view is changed.
+  deleted: The view is deleted.
+  restored: The default views are restored.
+  field:
+    name: Name
+    visibility: Who sees it
+    visibility_help: A shared view is seen by every owner and member.
+    show_count: Show the count on its tab
+  visibility:
+    private: Only me
+    shared: Everyone
+  error:
+    forbidden: Only its creator or an owner changes this view. Save your changes as a new view instead.
+    name: A view's name has 1 to 60 characters.
+    primary_full: The list already shows six tabs; move another view to More views first.
+    invalid: The view could not be saved. Check its filters and try again.
